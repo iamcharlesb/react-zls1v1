@@ -1,0 +1,20 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+body {
+  background-color: grey;
+}
+
+#snake-and-board-game {
+  position: relative;
+  border: 1px solid #000;
+}
+
+.dice {
+  border: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}

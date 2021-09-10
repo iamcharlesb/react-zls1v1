@@ -1,0 +1,25 @@
+.board--wrapper {
+  position: relative;
+  z-index: 0;
+}
+
+.board--wrapper div {
+  /*display: inline-block;*/
+  width: 9%;
+  height: 50px;
+  margin: 0px;
+  text-align: center;
+  border: 1px solid #000;
+  float: right;
+  /*padding: 20px;*/
+}
+
+.board--wrapper .bg-black {
+  background: brown;
+  display: inline-block;
+}
+
+.board--wrapper .bg-white {
+  background: #fff;
+  display: inline-block;
+}
