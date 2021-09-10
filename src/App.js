@@ -60,9 +60,9 @@ class App extends React.PureComponent {
     /*uncomment this line and comment out the next one to move the position one by one to see 
     how the snake and ladder are affecting the moves */
 
-    let newPosition = oldPosition + 1;
+    //let newPosition = oldPosition + 1;
 
-    //let newPosition = oldPosition + randomNo;
+    let newPosition = oldPosition + randomNo;
 
     if( this.ladderIndex[newPosition] ) {
       newPosition = this.ladderIndex[newPosition];
