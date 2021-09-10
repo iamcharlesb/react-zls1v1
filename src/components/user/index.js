@@ -1,4 +1,6 @@
 import React from 'react';
+import maleIcon from './male.png';
+import femaleIcon from './female.png';
 import './style.css';
 
 const User = ({ type }) => {
@@ -10,9 +12,14 @@ const User = ({ type }) => {
 
   const user = type === 'woman' ? woman : man;
 
+  let imgs = {
+    man: maleIcon,
+    woman: femaleIcon,
+  };
+
   return (
     <div className={`user ${type}`}>
-      <img src={user} />
+      <img src={imgs[type]} />
     </div>
   );
 };

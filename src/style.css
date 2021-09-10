@@ -3,8 +3,12 @@ p {
   font-family: Lato;
 }
 
+h1 {
+  text-align: center;
+}
+
 body {
-  background-color: grey;
+  background-color: #efefef;
 }
 
 #snake-and-board-game {
@@ -17,4 +21,5 @@ body {
   padding: 10px;
   margin-bottom: 10px;
   display: inline-block;
+  text-align: center;
 }

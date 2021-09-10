@@ -3,43 +3,73 @@ import EventObj from '../../Util/Events';
 import './style.css';
 import User from '../user';
 
-const Block = ({ className, blockId }) => {
-  let users = {};
+class Block extends React.PureComponent {
 
-  useEffect(() => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: []
+    }
+    this.blockId = props.blockId;
+    this.className = props.className;
+
+  }
+
+  componentDidMount() {
+
     EventObj.subscribe('MOVE_USER', payload => {
+
       if (!payload) return null;
 
       const { addBlockId, addUserId, removeBlockId, removeUserId } = payload;
+      const { users } = this.state;
 
-      if (blockId === addBlockId) {
-        console.log('Payload -', payload);
+      if (this.blockId === addBlockId) {
+        this.setState({
+          users: [...users, addUserId ]
+        });
       }
 
-      if (blockId === addBlockId) {
-        users[addUserId] = addUserId; //payload['UserComp'] || '';
-      }
+      if (this.blockId === removeBlockId) {
+        let newUserSet = users;
+        let arr = newUserSet.filter(function(item) {
+          return item !== removeUserId
+        });
 
-      if (blockId === removeBlockId) {
-        delete users[removeUserId];
+        this.setState({
+          users: arr
+        });
+
       }
+      
     });
-  });
+    
+  }
 
-  return (
-    <div className={className}>
-      {blockId}
-      {Object.keys(users).map((UserInfo, index) => {
-        return <div>123</div>;
-      })}
-    </div>
-  );
-};
+  render() {
+
+    const { users } = this.state;
+
+    return (
+      <div className={this.className}>
+
+        {this.blockId}
+
+        {users.map((userId, index) => {
+            return <User type={userId === 1 ? 'man':'woman'}/>
+          })
+        }
+
+      </div>
+    );
+  }
+
+}
 
 const Board = ({}) => {
   var arr = [];
 
-  for (var loop = 90; loop > 0; loop--) {
+  for (var loop = 88; loop > 0; loop--) {
     arr.push(
       <Block
         key={loop}
@@ -48,9 +78,6 @@ const Board = ({}) => {
       />
     );
   }
-
-  //Snake - 30 - 90
-  //ladder 41 - 95
 
   return <div className="board--wrapper">{arr}</div>;
 };

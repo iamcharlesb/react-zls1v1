@@ -2,22 +2,22 @@
   position: absolute;
   z-index: 1;
   bottom: 10px;
+  top: 10px;
+  left: 0px;
 }
 
 .user img {
   width: 20px;
-  padding-left: 10px;
-}
-
-.user img {
+  padding-left: 0px;
+  display: inline-block;
   width: 20px;
-  padding-left: 10px;
+  height: 20px;
+}
+
+.man {
+  left: 10px;
 }
 
 .woman {
-  margin-left: -20px;
-}
-
-.woman {
-  margin-left: 20px;
+  left: 40px;
 }

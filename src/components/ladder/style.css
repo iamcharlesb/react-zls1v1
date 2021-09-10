@@ -1,10 +1,10 @@
 .ladder {
   position: absolute;
   z-index: 1;
-  top: 110px;
+  top: 100px;
   right: 10px;
 }
 
 .ladder img {
-  width: 200px;
+  width: 270px;
 }

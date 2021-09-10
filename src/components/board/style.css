@@ -2,14 +2,19 @@
   position: relative;
   z-index: 0;
 }
+.board--wrapper::after {
+  clear: both;
+}
 
-.board--wrapper div {
+
+.board--wrapper > div {
   /*display: inline-block;*/
+  position: relative;
   width: 9%;
   height: 50px;
   margin: 0px;
   text-align: center;
-  border: 1px solid #000;
+  border: 0px;
   float: right;
   /*padding: 20px;*/
 }
